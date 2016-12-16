@@ -38,6 +38,9 @@ public class SendyUtils {
 	static String SENDY_BASEURL= "http://your_sendy_installation/";
 	static String SENDY_API_KEY ="your_sendy_api_key";
 	
+	/*
+	 * This method adds a new subscriber to a list
+	 */
 	public static String addEmailToList(String listid, String email, String name) throws Exception {
 
 		String url = SENDY_BASEURL+"subscribe";
@@ -73,6 +76,10 @@ public class SendyUtils {
 		return result.toString();		
 	}
 	
+	/*
+	 * This method unsubscribes a user from a list.
+	 */
+	
 	public static String unsubscribeEmailFromList(String listid, String email) throws Exception {
 
 		String url = SENDY_BASEURL+"unsubscribe";
@@ -107,6 +114,9 @@ public class SendyUtils {
 		return result.toString();		
 	}
 	
+	/*
+	 * This method deletes a subscriber from list
+	 */
 	public static String deleteEmailFromList(String apikey, String listid, String email) throws Exception {
 
 		String url = SENDY_BASEURL+"api/subscribers/delete.php";
@@ -141,6 +151,9 @@ public class SendyUtils {
 		return result.toString();		
 	}
 	
+	/*
+	 * This method gets the current status of a subscriber
+	 */
 	public static String activeSubscriberCountList(String apikey, String listid) throws Exception {
 
 		String url = SENDY_BASEURL+"api/subscribers/active-subscriber-count.php";
@@ -173,7 +186,9 @@ public class SendyUtils {
 		return result.toString();		
 	}
 
-
+	/*
+	 * This method creates a campaign with an option to send it now
+	 */
 	public static int createAndSendCampaign(String apikey, String listid,String subject,String plaintext, String html, String from_name) throws Exception {
 
 		String url = SENDY_BASEURL+"api/campaigns/create.php";
